@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Utkarsh Singh - Amazing & Delicious Food</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Utkarsh Singh - Amazing & Delicious Food">
+  <meta name="description" content="Utkarsh Singh's Restaurant - Fine Dining Experience">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===================== ROOT ===================== */
+    :root {
+      --gold-crayola: hsl(38, 61%, 73%);
+      --quick-silver: hsla(0, 0%, 65%, 1);
+      --davys-grey: hsla(30, 3%, 34%, 1);
+      --smoky-black-1: hsla(40, 12%, 5%, 1);
+      --smoky-black-2: hsla(30, 8%, 5%, 1);
+      --smoky-black-3: hsla(0, 3%, 7%, 1);
+      --eerie-black-1: hsla(210, 4%, 9%, 1);
+      --eerie-black-2: hsla(210, 4%, 11%, 1);
+      --eerie-black-3: hsla(180, 2%, 8%, 1);
+      --eerie-black-4: hsla(0, 0%, 13%, 1);
+      --white: hsla(0, 0%, 100%, 1);
+      --white-alpha-20: hsla(0, 0%, 100%, 0.2);
+      --white-alpha-10: hsla(0, 0%, 100%, 0.1);
+      --black: hsla(0, 0%, 0%, 1);
+      --black-alpha-80: hsla(0, 0%, 0%, 0.8);
+      --black-alpha-15: hsla(0, 0%, 0%, 0.15);
+      --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%, transparent 66.66% 75%);
+      --gradient-1: linear-gradient(to top, hsla(0, 0%, 0%, 0.9), hsla(0, 0%, 0%, 0.7), transparent);
+      --fontFamily-forum: 'Forum', cursive;
+      --fontFamily-dm_sans: 'DM Sans', sans-serif;
+      --fontSize-display-1: calc(1.3rem + 6.7vw);
+      --fontSize-headline-1: calc(2rem + 2.5vw);
+      --fontSize-headline-2: calc(1.3rem + 2.4vw);
+      --fontSize-title-1: calc(1.6rem + 1.2vw);
+      --fontSize-title-2: 2.2rem;
+      --fontSize-title-3: 2.1rem;
+      --fontSize-title-4: calc(1.6rem + 1.2vw);
+      --fontSize-body-1: 2.4rem;
+      --fontSize-body-2: 1.6rem;
+      --fontSize-body-3: 1.8rem;
+      --fontSize-body-4: 1.6rem;
+      --fontSize-label-1: 1.4rem;
+      --fontSize-label-2: 1.2rem;
+      --weight-regular: 400;
+      --weight-bold: 700;
+      --lineHeight-1: 1em;
+      --lineHeight-2: 1.2em;
+      --lineHeight-3: 1.5em;
+      --lineHeight-4: 1.6em;
+      --lineHeight-5: 1.85em;
+      --lineHeight-6: 1.4em;
+      --letterSpacing-1: 0.15em;
+      --letterSpacing-2: 0.4em;
+      --letterSpacing-3: 0.2em;
+      --letterSpacing-4: 0.3em;
+      --letterSpacing-5: 3px;
+      --section-space: 70px;
+      --shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
+      --radius-24: 24px;
+      --radius-circle: 50%;
+      --transition-1: 250ms ease;
+      --transition-2: 500ms ease;
+      --transition-3: 1000ms ease;
+    }
+
+    /* ===================== RESET ===================== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    li { list-style: none; }
+    a, img, data, span, input, button, select, ion-icon, textarea { display: block; }
+    a { color: inherit; text-decoration: none; }
+    img { height: auto; }
+    input, button, select, textarea { background: none; border: none; font: inherit; }
+    input, select, textarea { width: 100%; outline: none; }
+    button { cursor: pointer; }
+    address { font-style: normal; }
+    html { font-size: 10px; scroll-behavior: smooth; }
+    body {
+      background-color: var(--eerie-black-1);
+      color: var(--white);
+      font-family: var(--fontFamily-dm_sans);
+      font-size: var(--fontSize-body-4);
+      font-weight: var(--weight-regular);
+      line-height: var(--lineHeight-5);
+      overflow: hidden;
+      height: 300vh;
+    }
+    body.loaded { overflow: overlay; }
+    body.nav-active { overflow: hidden; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background-color: transparent; }
+    ::-webkit-scrollbar-thumb { background-color: var(--gold-crayola); }
+
+    /* ===================== TYPOGRAPHY ===================== */
+    .display-1, .headline-1, .headline-2, .title-1, .title-2, .title-3, .title-4 {
+      color: var(--white);
+      font-family: var(--fontFamily-forum);
+      font-weight: var(--weight-regular);
+      line-height: var(--lineHeight-2);
+    }
+    .display-1 { font-size: var(--fontSize-display-1); line-height: var(--lineHeight-1); }
+    .headline-1 { font-size: var(--fontSize-headline-1); }
+    .headline-2 { font-size: var(--fontSize-headline-2); line-height: var(--lineHeight-6); }
+    .title-1 { font-size: var(--fontSize-title-1); }
+    .title-2 { font-size: var(--fontSize-title-2); }
+    .title-3 { font-size: var(--fontSize-title-3); }
+    .title-4 { font-size: var(--fontSize-title-4); }
+    .body-1 { font-size: var(--fontSize-body-1); line-height: var(--lineHeight-6); }
+    .body-2 { font-size: var(--fontSize-body-2); line-height: var(--lineHeight-4); }
+    .body-3 { font-size: var(--fontSize-body-3); }
+    .body-4 { font-size: var(--fontSize-body-4); }
+    .label-1 { font-size: var(--fontSize-label-1); }
+    .label-2 { font-size: var(--fontSize-label-2); }
+
+    /* ===================== REUSED STYLES ===================== */
+    .container { padding-inline: 16px; }
+    .separator { width: 8px; height: 8px; border: 1px solid var(--gold-crayola); transform: rotate(45deg); }
+    .contact-label { font-weight: var(--weight-bold); }
+    .contact-number { color: var(--gold-crayola); max-width: max-content; margin-inline: auto; }
+    .hover-underline { position: relative; max-width: max-content; }
+    .hover-underline::after {
+      content: ""; position: absolute; left: 0; bottom: 0;
+      width: 100%; height: 5px; border-block: 1px solid var(--gold-crayola);
+      transform: scaleX(0.2); opacity: 0; transition: var(--transition-2);
+    }
+    .hover-underline:is(:hover, :focus-visible)::after { transform: scaleX(1); opacity: 1; }
+    .contact-number::after { bottom: -5px; }
+    .text-center { text-align: center; }
+    .img-cover { width: 100%; height: 100%; object-fit: cover; }
+    .section-subtitle {
+      position: relative; color: var(--gold-crayola);
+      font-weight: var(--weight-bold); text-transform: uppercase;
+      letter-spacing: var(--letterSpacing-2); margin-block-end: 12px;
+    }
+    .section-subtitle::after {
+      content: "✦ ─── ✦";
+      display: block; width: 100px; margin-inline: auto;
+      margin-block-start: 5px; font-size: 1rem; letter-spacing: 4px; opacity: 0.6;
+    }
+    .btn {
+      position: relative; color: var(--gold-crayola);
+      font-size: var(--fontSize-label-2); font-weight: var(--weight-bold);
+      text-transform: uppercase; letter-spacing: var(--letterSpacing-5);
+      max-width: max-content; border: 2px solid var(--gold-crayola);
+      padding: 12px 45px; overflow: hidden; z-index: 1;
+    }
+    .btn::before {
+      content: ""; position: absolute; bottom: 100%; left: 50%;
+      transform: translateX(-50%); width: 200%; height: 200%;
+      border-radius: var(--radius-circle); background-color: var(--gold-crayola);
+      transition: var(--transition-2); z-index: -1;
+    }
+    .btn .text { transition: var(--transition-1); }
+    .btn .text-2 {
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      min-width: max-content; color: var(--smoky-black-1);
+    }
+    .btn:is(:hover, :focus-visible)::before { bottom: -50%; }
+    .btn:is(:hover, :focus-visible) .text-1 { transform: translateY(-40px); }
+    .btn:is(:hover, :focus-visible) .text-2 { top: 50%; transform: translate(-50%, -50%); }
+    .btn-secondary { background-color: var(--gold-crayola); color: var(--black); }
+    .btn-secondary::before { background-color: var(--smoky-black-1); }
+    .btn-secondary .text-2 { color: var(--white); }
+    .has-before, .has-after { position: relative; z-index: 1; }
+    .has-before::before, .has-after::after { content: ""; position: absolute; }
+    .section { position: relative; padding-block: var(--section-space); overflow: hidden; z-index: 1; }
+    .bg-black-10 { background-color: var(--smoky-black-2); }
+    .grid-list { display: grid; gap: 40px; }
+    .img-holder { aspect-ratio: var(--width) / var(--height); overflow: hidden; background-color: var(--eerie-black-4); }
+    .btn-text {
+      color: var(--gold-crayola); padding-block-end: 4px; margin-inline: auto;
+      text-transform: uppercase; letter-spacing: var(--letterSpacing-3);
+      font-weight: var(--weight-bold); transition: var(--transition-1);
+    }
+    .btn-text:is(:hover, :focus-visible) { color: var(--white); }
+    .shape { display: none; position: absolute; max-width: max-content; z-index: -1; }
+    .w-100 { width: 100%; }
+    .move-anim { animation: move 5s linear infinite; }
+    @keyframes move { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(30px); } }
+    .has-bg-image { background-repeat: no-repeat; background-size: cover; background-position: center; }
+    .input-field {
+      background-color: var(--eerie-black-2); color: var(--white);
+      height: 56px; padding: 10px 20px;
+      border: 1px solid var(--white-alpha-10); margin-block-end: 20px;
+      outline: none; transition: border-color var(--transition-2);
+    }
+    .input-field::placeholder { color: inherit; }
+    .input-field:focus { border-color: var(--gold-crayola); }
+    .icon-wrapper { position: relative; margin-block-end: 20px; }
+    .icon-wrapper .input-field { margin-block-end: 0; padding-inline-start: 40px; appearance: none; cursor: pointer; }
+    .icon-wrapper ion-icon { position: absolute; top: 50%; transform: translateY(-50%); font-size: 1.4rem; --ionicon-stroke-width: 50px; pointer-events: none; }
+    .icon-wrapper ion-icon:first-child { left: 15px; }
+    .icon-wrapper ion-icon:last-child { right: 10px; }
+
+    /* ===================== PRELOAD ===================== */
+    .preload {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--gold-crayola); z-index: 10;
+      display: grid; place-content: center; justify-items: center;
+      transition: var(--transition-2);
+    }
+    .preload > * { transition: var(--transition-1); }
+    .preload.loaded > * { opacity: 0; }
+    .preload.loaded { transition-delay: 250ms; transform: translateY(100%); }
+    .circle {
+      width: 112px; height: 112px; border-radius: var(--radius-circle);
+      border: 3px solid var(--white); border-block-start-color: var(--smoky-black-3);
+      margin-block-end: 45px; animation: rotate360 1s linear infinite;
+    }
+    @keyframes rotate360 { 0% { transform: rotate(0); } 100% { transform: rotate(1turn); } }
+    .preload .text {
+      background-image: var(--loading-text-gradient); background-size: 500%;
+      font-size: calc(2rem + 3vw); font-weight: var(--weight-bold);
+      line-height: 1em; text-transform: uppercase; letter-spacing: 16px;
+      padding-inline-start: 16px; -webkit-text-fill-color: transparent;
+      background-clip: text; -webkit-background-clip: text;
+      -webkit-text-stroke: 0.5px var(--eerie-black-3);
+      animation: loadingText linear 2s infinite;
+    }
+    @keyframes loadingText { 0% { background-position: 100%; } 100% { background-position: 0%; } }
+
+    /* ===================== TOPBAR ===================== */
+    .topbar { display: none; }
+
+    /* ===================== HEADER ===================== */
+    .header .btn { display: none; }
+    .header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background-color: transparent; padding-block: 40px; z-index: 4;
+      border-block-end: 1px solid transparent; transition: var(--transition-1);
+    }
+    .header.active { padding-block: 20px; background-color: var(--eerie-black-4); border-color: var(--black-alpha-15); }
+    .header.hide { transform: translateY(-100%); transition-delay: 250ms; }
+    .header .container { padding-inline: 20px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .nav-open-btn { padding: 12px; padding-inline-end: 0; }
+    .nav-open-btn .line { width: 30px; height: 2px; background-color: var(--white); margin-block: 4px; transform-origin: left; animation: menuBtn 400ms ease-in-out alternate infinite; }
+    @keyframes menuBtn { 0% { transform: scaleX(1); } 100% { transform: scaleX(0.5); } }
+    .nav-open-btn .line-2 { animation-delay: 150ms; }
+    .nav-open-btn .line-3 { animation-delay: 300ms; }
+    .logo-text {
+      font-family: var(--fontFamily-forum);
+      font-size: 2.4rem;
+      color: var(--gold-crayola);
+      letter-spacing: 2px;
+    }
+    .navbar {
+      position: fixed; background-color: var(--smoky-black-1);
+      top: 0; left: -360px; bottom: 0; max-width: 360px; width: 100%;
+      padding-inline: 30px; padding-block-end: 50px;
+      overflow-y: auto; visibility: hidden; z-index: 2;
+      transition: var(--transition-2);
+    }
+    .navbar.active { visibility: visible; transform: translateX(360px); }
+    .navbar .close-btn { color: var(--white); border: 1px solid currentColor; padding: 4px; border-radius: var(--radius-circle); margin-inline-start: auto; margin-block: 30px 20px; }
+    .navbar .close-btn ion-icon { --ionicon-stroke-width: 40px; }
+    .navbar .close-btn:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+    .navbar .logo { max-width: max-content; margin-inline: auto; margin-block-end: 60px; }
+    .navbar-list { border-block-end: 1px solid var(--white-alpha-20); margin-block-end: 100px; }
+    .navbar-item { border-block-start: 1px solid var(--white-alpha-20); }
+    .navbar-link { position: relative; font-size: var(--fontSize-label-2); text-transform: uppercase; padding-block: 10px; max-width: unset; }
+    .navbar-link::after { display: none; }
+    .navbar-link .span { transition: var(--transition-1); }
+    .navbar-link:is(:hover, :focus-visible, .active) .span { color: var(--gold-crayola); transform: translateX(20px); }
+    .navbar-link .separator { position: absolute; top: 50%; left: 0; transform: translateY(-50%) rotate(45deg); opacity: 0; transition: var(--transition-1); }
+    .navbar-link:is(:hover, :focus-visible, .active) .separator { opacity: 1; }
+    .navbar-title { margin-block-end: 15px; }
+    .navbar-text { margin-block: 10px; }
+    .navbar .body-4 { color: var(--quick-silver); }
+    .sidebar-link { transition: var(--transition-1); }
+    .sidebar-link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+    .navbar .text-center .separator { margin-block: 30px; margin-inline: auto; }
+    .navbar .contact-label { margin-block-end: 10px; }
+    .navbar::-webkit-scrollbar-thumb { background-color: var(--white-alpha-10); }
+    .overlay { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: var(--black-alpha-80); opacity: 0; pointer-events: none; transition: var(--transition-2); z-index: 1; }
+    .overlay.active { opacity: 1; pointer-events: all; }
+
+    /* ===================== HERO ===================== */
+    .hero .slider-btn { display: none; }
+    .hero { position: relative; padding-block: 120px; min-height: 100vh; overflow: hidden; z-index: 1; }
+    .hero .slider-item { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; display: grid; place-content: center; padding-block-start: 100px; opacity: 0; visibility: hidden; transition: var(--transition-3); z-index: 1; }
+    .hero .slider-item.active { opacity: 1; visibility: visible; }
+    .hero .slider-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1.15); pointer-events: none; user-select: none; z-index: -1; }
+    .hero .slider-item.active .slider-bg { animation: smoothScale 7s linear forwards; }
+    @keyframes smoothScale { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
+    .hero .section-subtitle::after { margin-block: 14px 20px; }
+    .hero-text { margin-block: 10px 40px; }
+    .hero .btn { margin-inline: auto; }
+    .slider-reveal { transform: translateY(30px); opacity: 0; }
+    .hero .slider-item.active .slider-reveal { animation: sliderReveal 1s ease forwards; }
+    @keyframes sliderReveal { 0% { transform: translateY(30px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+    .hero .slider-item.active .section-subtitle { animation-delay: 500ms; }
+    .hero .slider-item.active .hero-title { animation-delay: 1000ms; }
+    .hero .slider-item.active .hero-text { animation-delay: 1.5s; }
+    .hero .slider-item.active .btn { animation-delay: 2s; }
+
+    /* Gradient hero backgrounds since we don't have images */
+    .hero-bg-1 { background: linear-gradient(135deg, #1a0a00 0%, #3d1a00 50%, #1a0a00 100%); }
+    .hero-bg-2 { background: linear-gradient(135deg, #0a1a0a 0%, #1a3d1a 50%, #0a1a0a 100%); }
+    .hero-bg-3 { background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3d 50%, #0a0a1a 100%); }
+
+    /* ===================== SERVICE ===================== */
+    .service .section-title { margin-block-end: 16px; }
+    .service .section-text { margin-block-end: 40px; }
+    .service-card { overflow: hidden; }
+    .service-card .has-before { padding-block: 30px; margin-block-end: 26px; z-index: 1; }
+    .service-card .has-before::before { top: 0; left: 50%; transform: translateX(-50%); width: 140px; height: 100%; background-color: var(--smoky-black-2); transition: var(--transition-2); transition-delay: 0; z-index: -1; will-change: transform; }
+    .service-card:is(:hover, :focus-within) .has-before::before { transform: rotateY(0.5turn) translateX(50%); transition-delay: 300ms; }
+    .service-card .card-banner { transition: var(--transition-2); }
+    .service-card:is(:hover, :focus-within) .card-banner { transform: scale(1.05); }
+    .service .card-title { margin-block-end: 12px; }
+    /* Fake banners with gradients */
+    .service-img-1 { background: linear-gradient(160deg, #3d1500, #a04000); width: 285px; height: 336px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+    .service-img-2 { background: linear-gradient(160deg, #003d15, #00a040); width: 285px; height: 336px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+    .service-img-3 { background: linear-gradient(160deg, #00153d, #0040a0); width: 285px; height: 336px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+
+    /* ===================== ABOUT ===================== */
+    .about .section-text { margin-block: 15px 30px; }
+    .about .btn { margin-inline: auto; margin-block-start: 26px; }
+    .about .container { display: grid; gap: 120px; }
+    .about-banner { position: relative; margin-block-end: 120px; }
+    .about-banner > .w-100 { padding-inline-start: 50px; }
+    .about .abs-img { position: absolute; }
+    .about .abs-img-1 { bottom: -120px; left: 0; width: 150px; padding-block: 50px; }
+    .about .abs-img-2 { top: -65px; right: 0; overflow: hidden; }
+    .about-fake-img { background: linear-gradient(135deg, #2a1500, #5a3000); width: 100%; height: 570px; display:flex; align-items:center; justify-content:center; font-size:8rem; border-radius: 4px; }
+    .about-abs-fake { background: linear-gradient(135deg, #1a0a00, #4a2000); width: 285px; height: 285px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+
+    /* ===================== SPECIAL DISH ===================== */
+    .special-dish-content { padding-block: 70px; }
+    .special-dish .abs-img { margin-inline: auto; margin-block-end: 12px; }
+    .special-dish .section-text { margin-block: 16px 40px; }
+    .special-dish-content .wrapper { display: flex; justify-content: center; align-items: center; gap: 20px; margin-block-end: 40px; }
+    .special-dish-content .del { text-decoration: none; color: var(--davys-grey); }
+    .special-dish-content .span { color: var(--gold-crayola); }
+    .special-dish .btn { margin-inline: auto; }
+    .special-dish-fake { background: linear-gradient(135deg, #1a0a00, #3a1500); min-height: 400px; display:flex; align-items:center; justify-content:center; font-size:10rem; }
+
+    /* ===================== MENU ===================== */
+    .menu .section-title { margin-block-end: 40px; }
+    .menu .grid-list { margin-block-end: 50px; }
+    .menu-card { display: flex; align-items: flex-start; gap: 20px; }
+    .hover\:card .card-banner { background-color: var(--gold-crayola); }
+    .hover\:card .card-banner .img-cover { transition: var(--transition-2); }
+    .hover\:card:is(:hover, :focus-within) .card-banner .img-cover { opacity: 0.7; transform: scale(1.05); }
+    .menu-card .card-banner { flex-shrink: 0; border-radius: var(--radius-24); }
+    .menu-card .card-title { transition: var(--transition-1); }
+    .menu-card .card-title:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+    .menu-card .badge { background-color: var(--gold-crayola); color: var(--eerie-black-1); font-family: var(--fontFamily-forum); max-width: max-content; line-height: var(--lineHeight-6); text-transform: uppercase; padding-inline: 10px; margin-block-start: 10px; }
+    .menu-card .span { color: var(--gold-crayola); margin-block: 10px; }
+    .menu-card .card-text { color: var(--quick-silver); line-height: var(--lineHeight-4); }
+    .menu-text .span { display: inline-block; color: var(--gold-crayola); }
+    .menu .btn { margin-inline: auto; margin-block-start: 26px; }
+    .menu-fake-img { width: 100px; height: 100px; border-radius: var(--radius-24); display:flex; align-items:center; justify-content:center; font-size:3rem; }
+
+    /* ===================== TESTIMONIALS ===================== */
+    .testi { padding-block-end: 340px; position: static; background: linear-gradient(135deg, #1a0800, #3a1800); }
+    .testi .quote { font-size: 7rem; font-family: var(--fontFamily-forum); line-height: 0.7em; }
+    .testi .wrapper { display: flex; justify-content: center; gap: 2px; margin-block: 40px 50px; }
+    .testi .separator { animation: rotate360 15s linear infinite; }
+    .profile .img { margin-inline: auto; border-radius: var(--radius-circle); margin-block-end: 15px; }
+    .testi .profile-name { color: var(--gold-crayola); font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: var(--letterSpacing-3); }
+    .profile-fake-img { width: 100px; height: 100px; border-radius: var(--radius-circle); background: linear-gradient(135deg, #4a2a00, #a06000); display:flex; align-items:center; justify-content:center; font-size:3rem; margin-inline: auto; margin-block-end: 15px; }
+
+    /* ===================== RESERVATION ===================== */
+    .reservation-form { margin-block-start: -270px; }
+    .form-text { margin-block-end: 40px; }
+    .form-text .link { display: inline; color: var(--gold-crayola); }
+    .form-right .headline-1 { margin-block-end: 40px; }
+    .form-right .contact-label { margin-block-end: 5px; }
+    .form-right .separator { margin: 20px auto; }
+    .form-right .body-4 { color: var(--quick-silver); line-height: var(--lineHeight-3); }
+    .form-right .body-4:not(:last-child) { margin-block-end: 25px; }
+    .form-left, .form-right { padding: 40px 20px 30px; }
+    .input-field[type="date"] { text-transform: uppercase; padding-inline-end: 10px; }
+    .input-field[type="date"]::-webkit-calendar-picker-indicator { opacity: 0; }
+    textarea.input-field { resize: none; height: 140px; padding-block: 20px; line-height: var(--lineHeight-1); }
+    .form-left .btn { max-width: 100%; width: 100%; }
+    .form-right { background-repeat: repeat; background-position: top left; }
+
+    /* ===================== FEATURES ===================== */
+    .features .section-title { margin-block-end: 40px; }
+    .feature-card { padding: 30px 20px 40px; }
+    .feature-item:nth-child(2n+1) .feature-card { background-color: var(--eerie-black-3); }
+    .feature-item:nth-child(2n) .feature-card { background-color: var(--smoky-black-3); }
+    .feature-card .card-icon { max-width: max-content; margin-inline: auto; transition: var(--transition-2); font-size: 5rem; padding: 10px; }
+    .feature-card:hover .card-icon { transform: scale(-1) rotate(180deg); }
+    .feature-card .card-title { margin-block: 20px; }
+    .feature-card .card-text { color: var(--quick-silver); line-height: var(--lineHeight-6); }
+
+    /* ===================== EVENT ===================== */
+    .event .section-title { margin-block-end: 40px; }
+    .event-card { position: relative; overflow: hidden; }
+    .event-card .card-content { background-image: var(--gradient-1); position: absolute; bottom: 0; width: 100%; padding: 35px 35px 25px; }
+    .event-card .publish-date { position: absolute; top: 30px; left: 25px; padding: 5px 10px; color: var(--gold-crayola); background-color: var(--black); font-weight: var(--weight-bold); letter-spacing: var(--letterSpacing-1); line-height: 14px; }
+    .event-card .card-subtitle { color: var(--gold-crayola); text-transform: uppercase; font-weight: var(--weight-bold); letter-spacing: var(--letterSpacing-2); margin-block-end: 5px; }
+    .event-card .card-banner .img-cover { transition: var(--transition-2); }
+    .event-card:is(:hover, :focus-within) .img-cover { transform: scale(1.05); }
+    .event .btn { margin-inline: auto; margin-block-start: 40px; }
+    .event-fake-img { width: 350px; height: 450px; display:flex; align-items:center; justify-content:center; font-size:6rem; position: relative; }
+    .event-fake-1 { background: linear-gradient(160deg, #1a0500, #4a1500); }
+    .event-fake-2 { background: linear-gradient(160deg, #001a05, #00451a); }
+    .event-fake-3 { background: linear-gradient(160deg, #05001a, #150045); }
+
+    /* ===================== FOOTER ===================== */
+    .footer-top { margin-block-end: 70px; }
+    .footer-brand { position: relative; padding: 50px 40px; background: var(--smoky-black-1); }
+    .footer-brand .logo { max-width: max-content; margin-inline: auto; margin-block-end: 40px; }
+    .footer-brand :is(.body-4, .label-1) { color: var(--quick-silver); line-height: var(--lineHeight-3); }
+    .footer-brand .contact-link { margin-block: 6px; transition: var(--transition-1); }
+    .footer-brand .contact-link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+    .footer-brand .wrapper { display: flex; justify-content: center; gap: 2px; margin-block: 40px 25px; }
+    .footer-brand .separator { animation: rotate360 15s linear infinite; }
+    .footer-brand .label-1 { margin-block-end: 30px; }
+    .footer-brand .label-1 .span { display: inline; color: var(--white); }
+    .footer-brand .icon-wrapper .input-field { cursor: text; }
+    .footer-brand .btn { min-width: 100%; }
+    .footer-list { display: grid; gap: 20px; }
+    .footer-link { color: var(--quick-silver); font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: var(--letterSpacing-4); margin-inline: auto; transition: var(--transition-1); }
+    .footer-link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+    .copyright { color: var(--quick-silver); line-height: var(--lineHeight-3); }
+    .copyright .link { display: inline; color: var(--gold-crayola); text-decoration: underline; }
+
+    /* ===================== BACK TO TOP ===================== */
+    .back-top-btn {
+      position: fixed; bottom: 20px; right: 20px;
+      background-color: var(--gold-crayola); color: var(--smoky-black-1);
+      font-size: 22px; width: 50px; height: 50px;
+      border-radius: var(--radius-circle); display: grid; place-items: center;
+      box-shadow: var(--shadow-1); transition: var(--transition-1);
+      opacity: 0; visibility: hidden; z-index: 4;
+    }
+    .back-top-btn:is(:hover, :focus-visible) { background-color: var(--white); color: var(--gold-crayola); }
+    .back-top-btn.active { opacity: 1; visibility: visible; }
+
+    /* ===================== DATABASE ADMIN PANEL ===================== */
+    .db-fab {
+      position: fixed; bottom: 80px; right: 20px;
+      background-color: #2a7a2a; color: #fff;
+      width: 50px; height: 50px; border-radius: var(--radius-circle);
+      display: grid; place-items: center; font-size: 2rem;
+      box-shadow: var(--shadow-1); cursor: pointer; z-index: 4;
+      transition: var(--transition-1); border: none;
+    }
+    .db-fab:hover { background-color: #3a9a3a; transform: scale(1.1); }
+    .db-panel {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.95); z-index: 100; overflow-y: auto;
+      padding: 20px;
+    }
+    .db-panel.open { display: block; }
+    .db-panel-inner { max-width: 1100px; margin: 0 auto; }
+    .db-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-block-end: 30px; padding-block-end: 20px;
+      border-bottom: 2px solid var(--gold-crayola);
+    }
+    .db-header h2 { font-family: var(--fontFamily-forum); color: var(--gold-crayola); font-size: 3rem; }
+    .db-close-btn {
+      background: none; border: 2px solid var(--gold-crayola);
+      color: var(--gold-crayola); padding: 8px 16px; cursor: pointer;
+      font-size: 1.4rem; letter-spacing: 1px; transition: var(--transition-1);
+    }
+    .db-close-btn:hover { background: var(--gold-crayola); color: #000; }
+    .db-tabs { display: flex; gap: 10px; margin-block-end: 30px; }
+    .db-tab {
+      background: var(--eerie-black-2); border: 1px solid var(--white-alpha-20);
+      color: var(--white); padding: 10px 24px; cursor: pointer;
+      font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px;
+      transition: var(--transition-1);
+    }
+    .db-tab.active { background: var(--gold-crayola); color: #000; border-color: var(--gold-crayola); }
+    .db-tab:hover:not(.active) { border-color: var(--gold-crayola); color: var(--gold-crayola); }
+    .db-section { display: none; }
+    .db-section.active { display: block; }
+    .db-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-block-end: 30px; }
+    .db-stat-card { background: var(--eerie-black-2); border: 1px solid var(--white-alpha-10); padding: 20px; text-align: center; }
+    .db-stat-card .num { font-size: 4rem; font-family: var(--fontFamily-forum); color: var(--gold-crayola); }
+    .db-stat-card .lbl { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: var(--quick-silver); margin-top: 8px; }
+    .db-table-wrap { overflow-x: auto; }
+    .db-table { width: 100%; border-collapse: collapse; font-size: 1.3rem; }
+    .db-table th { background: var(--smoky-black-1); color: var(--gold-crayola); padding: 12px 15px; text-align: left; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--gold-crayola); }
+    .db-table td { padding: 12px 15px; border-bottom: 1px solid var(--white-alpha-10); color: var(--quick-silver); }
+    .db-table tr:hover td { background: var(--eerie-black-2); color: var(--white); }
+    .db-table .badge-new { background: #2a7a2a; color: #fff; padding: 2px 8px; font-size: 1.1rem; border-radius: 3px; }
+    .db-table .badge-confirmed { background: var(--gold-crayola); color: #000; padding: 2px 8px; font-size: 1.1rem; border-radius: 3px; }
+    .db-empty { text-align: center; padding: 60px 20px; color: var(--quick-silver); font-size: 1.5rem; }
+    .db-empty .icon { font-size: 5rem; margin-block-end: 15px; opacity: 0.4; }
+    .db-action-btn { background: none; border: 1px solid #c44; color: #c44; padding: 4px 10px; cursor: pointer; font-size: 1.1rem; transition: var(--transition-1); }
+    .db-action-btn:hover { background: #c44; color: #fff; }
+    .db-confirm-btn { background: none; border: 1px solid #2a7a2a; color: #2a7a2a; padding: 4px 10px; cursor: pointer; font-size: 1.1rem; transition: var(--transition-1); }
+    .db-confirm-btn:hover { background: #2a7a2a; color: #fff; }
+    .db-refresh-btn { background: var(--eerie-black-2); border: 1px solid var(--white-alpha-20); color: var(--white); padding: 8px 20px; cursor: pointer; font-size: 1.3rem; margin-block-end: 20px; transition: var(--transition-1); }
+    .db-refresh-btn:hover { border-color: var(--gold-crayola); color: var(--gold-crayola); }
+    .db-section-title { font-family: var(--fontFamily-forum); color: var(--gold-crayola); font-size: 2rem; margin-block-end: 20px; }
+    .db-clear-btn { background: none; border: 1px solid #c44; color: #c44; padding: 8px 20px; cursor: pointer; font-size: 1.3rem; float: right; transition: var(--transition-1); }
+    .db-clear-btn:hover { background: #c44; color: #fff; }
+
+    /* ===================== TOAST ===================== */
+    .toast {
+      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+      background: #2a7a2a; color: #fff; padding: 14px 30px;
+      font-size: 1.4rem; z-index: 999; transition: transform 0.4s ease;
+      pointer-events: none; white-space: nowrap;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+    .toast.error { background: #c44; }
+
+    /* ===================== MEDIA QUERIES ===================== */
+    @media (min-width: 575px) {
+      :root { --fontSize-body-2: 2rem; }
+      :is(.service, .about) .section-text { max-width: 420px; margin-inline: auto; }
+      .contact-number { --fontSize-body-1: 3rem; }
+      .topbar { display: block; position: fixed; top: 0; left: 0; width: 100%; padding-block: 10px; border-block-end: 1px solid var(--white-alpha-20); z-index: 4; transition: var(--transition-1); }
+      .topbar:has(~ .header.active) { transform: translateY(-100%); }
+      .topbar-item:not(.link), .topbar .separator { display: none; }
+      .topbar .container, .topbar-item { display: flex; align-items: center; }
+      .topbar .container { justify-content: center; gap: 30px; }
+      .topbar-item { gap: 6px; }
+      .topbar-item ion-icon { --ionicon-stroke-width: 60px; }
+      .topbar-item .span { font-size: var(--fontSize-label-1); }
+      .topbar .link { transition: var(--transition-1); }
+      .topbar .link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+      .header { top: 51px; }
+      .header.active { top: 0; }
+      .header .btn { display: block; margin-inline-start: auto; }
+    }
+    @media (min-width: 768px) {
+      .grid-list { grid-template-columns: 1fr 1fr; }
+      :is(.service, .event) .container { max-width: 820px; }
+      :is(.service, .event) .grid-list li:last-child { grid-column: 1 / 3; width: calc(50% - 20px); margin-inline: auto; }
+      .navbar-list { margin-inline: 30px; }
+      .hero .slider-btn { display: grid; position: absolute; z-index: 1; color: var(--gold-crayola); font-size: 2.4rem; border: 1px solid var(--gold-crayola); width: 45px; height: 45px; place-items: center; top: 50%; transform: translateY(-50%) rotate(45deg); transition: var(--transition-1); }
+      .hero .slider-btn ion-icon { transform: rotate(-45deg); }
+      .hero .slider-btn.prev { left: 30px; }
+      .hero .slider-btn.next { right: 30px; }
+      .hero .slider-btn:is(:hover, :focus-visible) { background-color: var(--gold-crayola); color: var(--black); }
+      .reservation .input-wrapper { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; }
+      .reservation .input-wrapper:nth-child(4) { grid-template-columns: repeat(3, 1fr); }
+      .footer-brand { grid-column: 1 / 3; }
+    }
+    @media (min-width: 992px) {
+      :root { --section-space: 100px; }
+      :is(.service, .event) .container { max-width: unset; }
+      :is(.service, .event) .grid-list { grid-template-columns: repeat(3, 1fr); }
+      :is(.service, .event) .grid-list li:last-child { grid-column: auto; width: 100%; }
+      .topbar-item:not(.link) { display: flex; }
+      .topbar .item-2 { margin-inline-end: auto; }
+      .about .container { grid-template-columns: 0.7fr 1fr; gap: 30px; }
+      .special-dish { display: grid; grid-template-columns: 1fr 1fr; text-align: left; }
+      .special-dish-content { padding-inline: 50px 25px; }
+      .special-dish-content .container { position: relative; }
+      .special-dish .section-subtitle::after, .special-dish .btn { margin-inline: 0; }
+      .special-dish-content .wrapper { justify-content: flex-start; }
+      .special-dish .abs-img { position: absolute; top: 10px; left: -40px; animation: move 5s linear infinite; }
+      .menu .grid-list { position: relative; column-gap: 90px; }
+      .menu .grid-list::before { content: ""; position: absolute; top: 0; left: 50%; height: 100%; border-inline-start: 1px solid var(--white-alpha-20); }
+      .testi-text { max-width: 910px; margin-inline: auto; }
+      .reservation-form { display: grid; grid-template-columns: 1fr 0.5fr; }
+      .footer .grid-list { grid-template-columns: 0.45fr 1fr 0.45fr; align-items: center; }
+      .footer-brand { grid-column: auto; order: 1; padding-block: 100px; }
+      .footer-list:last-child { order: 2; }
+    }
+    @media (min-width: 1200px) {
+      :root { --fontSize-title-2: 2.5rem; }
+      .container, :is(.service, .event) .container { max-width: 1200px; width: 100%; margin-inline: auto; }
+      .topbar .container { max-width: unset; }
+      .topbar .separator { display: block; }
+      .nav-open-btn, .navbar > *:not(.navbar-list), .header .overlay { display: none; }
+      .header .container { max-width: unset; }
+      .navbar, .navbar.active, .navbar-list { all: unset; }
+      .navbar, .navbar.active { margin-inline: auto 20px; }
+      .navbar-list { display: flex; gap: 30px; }
+      .navbar-item { border-block-start: none; }
+      .navbar .separator { display: none; }
+      .navbar-link:is(:hover, :focus-visible, .active) .span { transform: unset; }
+      .navbar-link { font-weight: var(--weight-bold); letter-spacing: var(--letterSpacing-1); }
+      .navbar-link::after { display: block; }
+      .navbar-link.active::after { transform: scaleX(1); opacity: 1; }
+      .header .btn { margin-inline-start: 0; }
+      .hero { height: 880px; }
+      .service .grid-list { gap: 150px; }
+      .service .grid-list li:nth-child(2n+1) { transform: translateY(-160px); }
+      .service .section-text { margin-block-end: 75px; }
+      .about { padding-block: 170px 100px; }
+      .special-dish-content { padding: 225px 120px; padding-inline-end: 0; }
+      .special-dish-content .container { max-width: 460px; margin-inline: 0; }
+      .menu .grid-list { gap: 55px 200px; margin-block-end: 55px; }
+      .form-left, .form-right { padding: 75px 60px; }
+      .features .grid-list { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (min-width: 1400px) {
+      .navbar { margin-inline: auto; }
+      .about-content { padding-inline-end: 90px; }
+      .about .shape { display: block; top: 46%; left: 0; }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- PRELOADER -->
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="preload text">Utkarsh</p>
+  </div>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <address class="topbar-item">
+        <div class="icon"><ion-icon name="location-outline" aria-hidden="true"></ion-icon></div>
+        <span class="span">Utkarsh Singh's Restaurant, Vadodara, Gujarat</span>
+      </address>
+      <div class="separator"></div>
+      <div class="topbar-item item-2">
+        <div class="icon"><ion-icon name="time-outline" aria-hidden="true"></ion-icon></div>
+        <span class="span">Daily : 8:00 am to 10:00 pm</span>
+      </div>
+      <a href="tel:+911234567890" class="topbar-item link">
+        <div class="icon"><ion-icon name="call-outline" aria-hidden="true"></ion-icon></div>
+        <span class="span">+91 123 456 7890</span>
+      </a>
+      <div class="separator"></div>
+      <a href="mailto:booking@utkarshrestaurant.com" class="topbar-item link">
+        <div class="icon"><ion-icon name="mail-outline" aria-hidden="true"></ion-icon></div>
+        <span class="span">booking@utkarshrestaurant.com</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo-text">Utkarsh Singh</a>
+
+      <nav class="navbar" data-navbar>
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+        <a href="#" class="logo logo-text" style="margin-inline: auto; margin-block-end: 60px; font-size: 2rem;">Utkarsh Singh</a>
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="#home" class="navbar-link hover-underline active"><div class="separator"></div><span class="span">Home</span></a></li>
+          <li class="navbar-item"><a href="#menu" class="navbar-link hover-underline"><div class="separator"></div><span class="span">Menus</span></a></li>
+          <li class="navbar-item"><a href="#about" class="navbar-link hover-underline"><div class="separator"></div><span class="span">About Us</span></a></li>
+          <li class="navbar-item"><a href="#features" class="navbar-link hover-underline"><div class="separator"></div><span class="span">Our Chefs</span></a></li>
+          <li class="navbar-item"><a href="#table" class="navbar-link hover-underline"><div class="separator"></div><span class="span">Contact</span></a></li>
+        </ul>
+        <div class="text-center">
+          <p class="headline-1 navbar-title">Visit Us</p>
+          <address class="body-4">Utkarsh Singh's Restaurant<br>Vadodara, Gujarat, India</address>
+          <p class="body-4 navbar-text">Open: 8:00 am – 10:00 pm</p>
+          <a href="mailto:booking@utkarshrestaurant.com" class="body-4 sidebar-link">booking@utkarshrestaurant.com</a>
+          <div class="separator"></div>
+          <p class="contact-label">Booking Request</p>
+          <a href="tel:+911234567890" class="body-1 contact-number hover-underline">+91-123-456-7890</a>
+        </div>
+      </nav>
+
+      <a href="#table" class="btn btn-secondary">
+        <span class="text text-1">Book A Table</span>
+        <span class="text text-2" aria-hidden="true">Book A Table</span>
+      </a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+      <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- HERO -->
+      <section class="hero text-center" aria-label="home" id="home">
+        <ul class="hero-slider" data-hero-slider>
+          <li class="slider-item active" data-hero-slider-item>
+            <div class="slider-bg hero-bg-1"></div>
+            <p class="label-2 section-subtitle slider-reveal">Traditional &amp; Hygienic</p>
+            <h1 class="display-1 hero-title slider-reveal">For the love of<br>delicious food</h1>
+            <p class="body-2 hero-text slider-reveal">Come with family &amp; feel the joy of mouthwatering food</p>
+            <a href="#menu" class="btn btn-primary slider-reveal">
+              <span class="text text-1">View Our Menu</span>
+              <span class="text text-2" aria-hidden="true">View Our Menu</span>
+            </a>
+          </li>
+          <li class="slider-item" data-hero-slider-item>
+            <div class="slider-bg hero-bg-2"></div>
+            <p class="label-2 section-subtitle slider-reveal">Delightful Experience</p>
+            <h1 class="display-1 hero-title slider-reveal">Flavors Inspired by<br>the Seasons</h1>
+            <p class="body-2 hero-text slider-reveal">Come with family &amp; feel the joy of mouthwatering food</p>
+            <a href="#menu" class="btn btn-primary slider-reveal">
+              <span class="text text-1">View Our Menu</span>
+              <span class="text text-2" aria-hidden="true">View Our Menu</span>
+            </a>
+          </li>
+          <li class="slider-item" data-hero-slider-item>
+            <div class="slider-bg hero-bg-3"></div>
+            <p class="label-2 section-subtitle slider-reveal">Amazing &amp; Delicious</p>
+            <h1 class="display-1 hero-title slider-reveal">Where every flavor<br>tells a story</h1>
+            <p class="body-2 hero-text slider-reveal">Come with family &amp; feel the joy of mouthwatering food</p>
+            <a href="#menu" class="btn btn-primary slider-reveal">
+              <span class="text text-1">View Our Menu</span>
+              <span class="text text-2" aria-hidden="true">View Our Menu</span>
+            </a>
+          </li>
+        </ul>
+        <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+          <ion-icon name="chevron-back"></ion-icon>
+        </button>
+        <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </button>
+      </section>
+
+      <!-- SERVICE -->
+      <section class="section service bg-black-10 text-center" aria-label="service">
+        <div class="container">
+          <p class="section-subtitle label-2">Flavors For Royalty</p>
+          <h2 class="headline-1 section-title">We Offer Top Notch</h2>
+          <p class="section-text">
+            Utkarsh Singh's restaurant brings you an exquisite dining experience crafted with passion,
+            premium ingredients, and a dedication to culinary excellence.
+          </p>
+          <ul class="grid-list">
+            <li>
+              <div class="service-card">
+                <a href="#" class="has-before hover:shine">
+                  <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                    <div class="service-img-1">🍳</div>
+                  </figure>
+                </a>
+                <div class="card-content">
+                  <h3 class="title-4 card-title"><a href="#">Breakfast</a></h3>
+                  <a href="#menu" class="btn-text hover-underline label-2">View Menu</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <a href="#" class="has-before hover:shine">
+                  <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                    <div class="service-img-2">🥗</div>
+                  </figure>
+                </a>
+                <div class="card-content">
+                  <h3 class="title-4 card-title"><a href="#">Appetizers</a></h3>
+                  <a href="#menu" class="btn-text hover-underline label-2">View Menu</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <a href="#" class="has-before hover:shine">
+                  <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                    <div class="service-img-3">🍹</div>
+                  </figure>
+                </a>
+                <div class="card-content">
+                  <h3 class="title-4 card-title"><a href="#">Drinks</a></h3>
+                  <a href="#menu" class="btn-text hover-underline label-2">View Menu</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section about text-center" aria-labelledby="about-label" id="about">
+        <div class="container">
+          <div class="about-content">
+            <p class="label-2 section-subtitle" id="about-label">Our Story</p>
+            <h2 class="headline-1 section-title">Every Flavor Tells a Story</h2>
+            <p class="section-text">
+              Founded by Utkarsh Singh with a vision to bring world-class cuisine to Vadodara, our restaurant
+              blends traditional recipes with modern culinary techniques. Every dish is crafted with love,
+              using locally-sourced ingredients and time-honored methods passed down through generations.
+            </p>
+            <div class="contact-label">Book Through Call</div>
+            <a href="tel:+914001234567" class="body-1 contact-number hover-underline">+91 (400) 123 4567</a>
+            <a href="#" class="btn btn-primary">
+              <span class="text text-1">Read More</span>
+              <span class="text text-2" aria-hidden="true">Read More</span>
+            </a>
+          </div>
+          <figure class="about-banner">
+            <div class="about-fake-img w-100">🍽️</div>
+            <div class="abs-img abs-img-1 has-before">
+              <div class="about-abs-fake">👨‍🍳</div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- SPECIAL DISH -->
+      <section class="special-dish text-center" aria-labelledby="dish-label">
+        <div class="special-dish-banner">
+          <div class="special-dish-fake">🦞</div>
+        </div>
+        <div class="special-dish-content bg-black-10">
+          <div class="container">
+            <p class="section-subtitle label-2">Special Dish</p>
+            <h2 class="headline-1 section-title">Lobster Tortellini</h2>
+            <p class="section-text">
+              A signature creation by Chef Utkarsh Singh — fresh lobster folded into hand-crafted tortellini
+              pasta, served in a rich saffron bisque with a drizzle of truffle oil.
+            </p>
+            <div class="wrapper">
+              <del class="del body-3">₹2000</del>
+              <span class="span body-1">₹999</span>
+            </div>
+            <a href="#menu" class="btn btn-primary">
+              <span class="text text-1">View All Menu</span>
+              <span class="text text-2" aria-hidden="true">View All Menu</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- MENU -->
+      <section class="section menu" aria-label="menu-label" id="menu">
+        <div class="container">
+          <p class="section-subtitle text-center label-2">Special Selection</p>
+          <h2 class="headline-1 section-title text-center">Delicious Menu</h2>
+          <ul class="grid-list">
+            <li>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <div class="menu-fake-img" style="background: linear-gradient(135deg,#2a1500,#5a3000);">🥗</div>
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title">Greek Salad</a></h3>
+                    <span class="badge label-1">Seasonal</span>
+                    <span class="span title-2">₹450</span>
+                  </div>
+                  <p class="card-text label-1">Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <div class="menu-fake-img" style="background: linear-gradient(135deg,#1a1000,#4a3000);">🍝</div>
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title">Lasagne</a></h3>
+                    <span class="span title-2">₹750</span>
+                  </div>
+                  <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <div class="menu-fake-img" style="background: linear-gradient(135deg,#1a0a00,#3d2200);">🎃</div>
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title">Butternut Pumpkin</a></h3>
+                    <span class="span title-2">₹350</span>
+                  </div>
+                  <p class="card-text label-1">Creamy butternut pumpkin soup with a hint of nutmeg and fresh cream.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <div class="menu-fake-img" style="background: linear-gradient(135deg,#1a0000,#4a1000);">🥩</div>
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title">Tokusen Wagyu</a></h3>
+                    <span class="badge label-1">New</span>
+                    <span class="span title-2">₹2200</span>
+                  </div>
+                  <p class="card-text label-1">Premium wagyu beef, seared to perfection with seasonal vegetables and truffle jus.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <div class="menu-fake-img" style="background: linear-gradient(135deg,#0a1a00,#2a4a00);">🫒</div>
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title">Olivas Rellenas</a></h3>
+                    <span class="span title-2">₹550</span>
+                  </div>
+                  <p class="card-text label-1">Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green bell pepper.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <div class="menu-fake-img" style="background: linear-gradient(135deg,#00101a,#00304a);">🐟</div>
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title">Opu Fish</a></h3>
+                    <span class="span title-2">₹1800</span>
+                  </div>
+                  <p class="card-text label-1">Fresh Opu fish grilled with Mediterranean herbs, lemon butter sauce and sautéed greens.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <p class="menu-text text-center">
+            During winter daily from <span class="span">7:00 pm</span> to <span class="span">9:00 pm</span>
+          </p>
+          <a href="#" class="btn btn-primary">
+            <span class="text text-1">View All Menu</span>
+            <span class="text text-2" aria-hidden="true">View All Menu</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section testi text-center" aria-label="testimonials">
+        <div class="container">
+          <div class="quote">"</div>
+          <p class="headline-2 testi-text">
+            I wanted to thank Utkarsh Singh for inviting me to that extraordinary dinner. The food was nothing
+            short of a masterpiece — each course told its own beautiful story.
+          </p>
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+          <div class="profile">
+            <div class="profile-fake-img">👤</div>
+            <p class="label-2 profile-name">Rahul Mehta</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESERVATION -->
+      <section id="table" class="reservation">
+        <div class="container">
+          <div class="form reservation-form bg-black-10">
+            <form class="form-left" id="reservationForm">
+              <h2 class="headline-1 text-center">Online Reservation</h2>
+              <p class="form-text text-center">
+                Booking request <a href="tel:+911234567890" class="link">+91-123-456-7890</a>
+                or fill out the order form
+              </p>
+              <div class="input-wrapper">
+                <input type="text" name="name" id="res-name" placeholder="Your Name" autocomplete="off" class="input-field" required>
+                <input type="number" name="phone" id="res-phone" placeholder="Phone Number" autocomplete="off" class="input-field" required>
+              </div>
+              <div class="input-wrapper">
+                <div class="icon-wrapper">
+                  <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                  <select name="person" id="res-person" class="input-field">
+                    <option value="1">1 Person</option>
+                    <option value="2">2 Person</option>
+                    <option value="3">3 Person</option>
+                    <option value="4">4 Person</option>
+                    <option value="5">5 Person</option>
+                    <option value="6">6 Person</option>
+                    <option value="7">7 Person</option>
+                  </select>
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                </div>
+                <div class="icon-wrapper">
+                  <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
+                  <input type="date" name="reservation-date" id="res-date" class="input-field">
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                </div>
+                <div class="icon-wrapper">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                  <select name="time" id="res-time" class="input-field">
+                    <option value="08:00">08:00 am</option>
+                    <option value="09:00">09:00 am</option>
+                    <option value="10:00">10:00 am</option>
+                    <option value="11:00">11:00 am</option>
+                    <option value="12:00">12:00 pm</option>
+                    <option value="13:00">01:00 pm</option>
+                    <option value="14:00">02:00 pm</option>
+                    <option value="15:00">03:00 pm</option>
+                    <option value="16:00">04:00 pm</option>
+                    <option value="17:00">05:00 pm</option>
+                    <option value="18:00">06:00 pm</option>
+                    <option value="19:00">07:00 pm</option>
+                    <option value="20:00">08:00 pm</option>
+                    <option value="21:00">09:00 pm</option>
+                    <option value="22:00">10:00 pm</option>
+                  </select>
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                </div>
+              </div>
+              <textarea name="message" id="res-message" placeholder="Special requests or message..." autocomplete="off" class="input-field"></textarea>
+              <button type="submit" class="btn btn-secondary">
+                <span class="text text-1">Book A Table</span>
+                <span class="text text-2" aria-hidden="true">Book A Table</span>
+              </button>
+            </form>
+
+            <div class="form-right text-center">
+              <h2 class="headline-1 text-center">Contact Us</h2>
+              <p class="contact-label">Booking Request</p>
+              <a href="tel:+911234567890" class="body-1 contact-number hover-underline">+91-123-456-7890</a>
+              <div class="separator"></div>
+              <p class="contact-label">Location</p>
+              <address class="body-4">Utkarsh Singh's Restaurant,<br>Vadodara, Gujarat 390001, India</address>
+              <p class="contact-label">Lunch Time</p>
+              <p class="body-4">Monday to Sunday<br>11:00 am – 2:30 pm</p>
+              <p class="contact-label">Dinner Time</p>
+              <p class="body-4">Monday to Sunday<br>05:00 pm – 10:00 pm</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="section features text-center" aria-label="features" id="features">
+        <div class="container">
+          <p class="section-subtitle label-2">Why Choose Us</p>
+          <h2 class="headline-1 section-title">Our Strength</h2>
+          <ul class="grid-list">
+            <li class="feature-item">
+              <div class="feature-card">
+                <div class="card-icon">🧼</div>
+                <h3 class="title-2 card-title">Hygienic Food</h3>
+                <p class="label-1 card-text">We maintain the highest standards of cleanliness and food safety in every kitchen process.</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-card">
+                <div class="card-icon">🌿</div>
+                <h3 class="title-2 card-title">Fresh Environment</h3>
+                <p class="label-1 card-text">Our dining area is thoughtfully designed to provide a fresh, comfortable, and relaxing ambience.</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-card">
+                <div class="card-icon">👨‍🍳</div>
+                <h3 class="title-2 card-title">Skilled Chefs</h3>
+                <p class="label-1 card-text">Our team of internationally-trained chefs brings decades of culinary expertise to your plate.</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-card">
+                <div class="card-icon">🎉</div>
+                <h3 class="title-2 card-title">Event & Party</h3>
+                <p class="label-1 card-text">We host private events, birthday parties, and corporate dinners with personalized service.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EVENT -->
+      <section class="section event bg-black-10" aria-label="event">
+        <div class="container">
+          <p class="section-subtitle label-2 text-center">Recent Updates</p>
+          <h2 class="section-title headline-1 text-center">Upcoming Events</h2>
+          <ul class="grid-list">
+            <li>
+              <div class="event-card has-before hover:shine">
+                <div class="card-banner img-holder event-fake-img event-fake-1" style="--width: 350; --height: 450;">
+                  🍱
+                  <time class="publish-date label-2" datetime="2025-09-15">15/09/2025</time>
+                </div>
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center">Food, Flavour</p>
+                  <h3 class="card-title title-2 text-center">Annual Food Festival by Utkarsh Singh</h3>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="event-card has-before hover:shine">
+                <div class="card-banner img-holder event-fake-img event-fake-2" style="--width: 350; --height: 450;">
+                  🌱
+                  <time class="publish-date label-2" datetime="2025-09-08">08/09/2025</time>
+                </div>
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center">Healthy Food</p>
+                  <h3 class="card-title title-2 text-center">Farm-to-Table: A Sustainable Dining Evening</h3>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="event-card has-before hover:shine">
+                <div class="card-banner img-holder event-fake-img event-fake-3" style="--width: 350; --height: 450;">
+                  🧑‍🍳
+                  <time class="publish-date label-2" datetime="2025-09-03">03/09/2025</time>
+                </div>
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center">Live Cooking</p>
+                  <h3 class="card-title title-2 text-center">Live Chef Demo with Utkarsh Singh</h3>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer section text-center" style="background: linear-gradient(135deg, #0a0500, #1a0c00);">
+    <div class="container">
+      <div class="footer-top grid-list">
+        <div class="footer-brand has-before has-after">
+          <a href="#" class="logo" style="font-family: var(--fontFamily-forum); font-size: 2.8rem; color: var(--gold-crayola); max-width: max-content; margin-inline: auto; margin-block-end: 40px; display: block;">
+            Utkarsh Singh
+          </a>
+          <address class="body-4">Utkarsh Singh's Restaurant, Vadodara, Gujarat 390001, India</address>
+          <a href="mailto:booking@utkarshrestaurant.com" class="body-4 contact-link">booking@utkarshrestaurant.com</a>
+          <a href="tel:+911234567890" class="body-4 contact-link">Booking Request : +91-123-456-7890</a>
+          <p class="body-4">Open : 08:00 am – 10:00 pm</p>
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+          <p class="title-1">Get News &amp; Offers</p>
+          <p class="label-1">Subscribe us &amp; Get <span class="span">25% Off.</span></p>
+          <form id="newsletterForm" class="input-wrapper">
+            <div class="icon-wrapper">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              <input type="email" id="nl-email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field">
+            </div>
+            <button type="submit" class="btn btn-secondary">
+              <span class="text text-1">Submit</span>
+              <span class="text text-2" aria-hidden="true">Submit</span>
+            </button>
+          </form>
+        </div>
+
+        <ul class="footer-list">
+          <li><a href="#home" class="label-2 footer-link hover-underline">Home</a></li>
+          <li><a href="#menu" class="label-2 footer-link hover-underline">Menus</a></li>
+          <li><a href="#about" class="label-2 footer-link hover-underline">About Us</a></li>
+          <li><a href="#features" class="label-2 footer-link hover-underline">Our Chefs</a></li>
+          <li><a href="#table" class="label-2 footer-link hover-underline">Contact</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><a href="#" class="label-2 footer-link hover-underline">Facebook</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Instagram</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Twitter</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">YouTube</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Google Maps</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2025 Utkarsh Singh's Restaurant. All Rights Reserved | Crafted by <span class="link">Utkarsh Singh</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- DATABASE PANEL BUTTON -->
+  <button class="db-fab" id="dbFabBtn" title="Open Database Panel">🗄️</button>
+
+  <!-- DATABASE ADMIN PANEL -->
+  <div class="db-panel" id="dbPanel">
+    <div class="db-panel-inner">
+      <div class="db-header">
+        <h2>🗄️ Restaurant Database — Admin Panel</h2>
+        <button class="db-close-btn" id="dbCloseBtn">✕ Close</button>
+      </div>
+
+      <div class="db-tabs">
+        <button class="db-tab active" data-tab="overview">📊 Overview</button>
+        <button class="db-tab" data-tab="reservations">📅 Reservations</button>
+        <button class="db-tab" data-tab="newsletter">📧 Newsletter</button>
+        <button class="db-tab" data-tab="schema">🔧 Schema</button>
+      </div>
+
+      <!-- OVERVIEW TAB -->
+      <div class="db-section active" id="tab-overview">
+        <h3 class="db-section-title">Database Overview</h3>
+        <div class="db-stats" id="dbStats">
+          <div class="db-stat-card"><div class="num" id="stat-res">0</div><div class="lbl">Total Reservations</div></div>
+          <div class="db-stat-card"><div class="num" id="stat-nl">0</div><div class="lbl">Newsletter Subscribers</div></div>
+          <div class="db-stat-card"><div class="num" id="stat-today">0</div><div class="lbl">Today's Bookings</div></div>
+          <div class="db-stat-card"><div class="num" id="stat-pending">0</div><div class="lbl">Pending Confirmations</div></div>
+        </div>
+        <p style="color: var(--quick-silver); font-size: 1.3rem; margin-block-end: 10px;">
+          ℹ️ This database uses <strong style="color: var(--gold-crayola);">IndexedDB</strong> (browser-native, persistent storage).
+          Data is saved locally and survives page reloads.
+        </p>
+      </div>
+
+      <!-- RESERVATIONS TAB -->
+      <div class="db-section" id="tab-reservations">
+        <h3 class="db-section-title">📅 Reservations Table</h3>
+        <button class="db-refresh-btn" id="refreshResBtn">🔄 Refresh</button>
+        <button class="db-clear-btn" id="clearResBtn">🗑️ Clear All</button>
+        <div style="clear:both; margin-block-end:15px;"></div>
+        <div class="db-table-wrap">
+          <table class="db-table">
+            <thead>
+              <tr>
+                <th>#ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Persons</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Message</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="reservationsTableBody">
+              <tr><td colspan="10"><div class="db-empty"><div class="icon">📭</div>No reservations yet. Book a table to see data here.</div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- NEWSLETTER TAB -->
+      <div class="db-section" id="tab-newsletter">
+        <h3 class="db-section-title">📧 Newsletter Subscribers Table</h3>
+        <button class="db-refresh-btn" id="refreshNlBtn">🔄 Refresh</button>
+        <button class="db-clear-btn" id="clearNlBtn">🗑️ Clear All</button>
+        <div style="clear:both; margin-block-end:15px;"></div>
+        <div class="db-table-wrap">
+          <table class="db-table">
+            <thead>
+              <tr>
+                <th>#ID</th>
+                <th>Email</th>
+                <th>Subscribed At</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="newsletterTableBody">
+              <tr><td colspan="4"><div class="db-empty"><div class="icon">📭</div>No subscribers yet.</div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SCHEMA TAB -->
+      <div class="db-section" id="tab-schema">
+        <h3 class="db-section-title">🔧 Database Schema</h3>
+        <pre style="background: var(--eerie-black-2); padding: 20px; border: 1px solid var(--white-alpha-10); color: var(--gold-crayola); font-size: 1.3rem; overflow-x: auto; line-height: 2;">
+<span style="color:#aaa">-- Database: Utkarsh Singh Restaurant DB (IndexedDB)</span>
+<span style="color:#aaa">-- Engine: Browser IndexedDB (persistent, no server needed)</span>
+
+<span style="color:var(--gold-crayola)">TABLE</span> reservations {
+  id          <span style="color:#7af">INTEGER</span>   AUTO_INCREMENT PRIMARY KEY
+  name        <span style="color:#7af">TEXT</span>      NOT NULL
+  phone       <span style="color:#7af">TEXT</span>      NOT NULL
+  persons     <span style="color:#7af">INTEGER</span>   DEFAULT 1
+  date        <span style="color:#7af">DATE</span>      NOT NULL
+  time        <span style="color:#7af">TIME</span>      NOT NULL
+  message     <span style="color:#7af">TEXT</span>      NULLABLE
+  status      <span style="color:#7af">ENUM</span>      ('pending', 'confirmed', 'cancelled') DEFAULT 'pending'
+  created_at  <span style="color:#7af">DATETIME</span>  DEFAULT CURRENT_TIMESTAMP
+}
+
+<span style="color:var(--gold-crayola)">TABLE</span> newsletter_subscribers {
+  id            <span style="color:#7af">INTEGER</span>   AUTO_INCREMENT PRIMARY KEY
+  email         <span style="color:#7af">TEXT</span>      UNIQUE NOT NULL
+  subscribed_at <span style="color:#7af">DATETIME</span>  DEFAULT CURRENT_TIMESTAMP
+}
+
+<span style="color:#aaa">-- Indexes</span>
+CREATE INDEX idx_res_date     ON reservations(date);
+CREATE INDEX idx_res_status   ON reservations(status);
+CREATE UNIQUE INDEX idx_nl_email ON newsletter_subscribers(email);
+        </pre>
+        <p style="color: var(--quick-silver); font-size: 1.3rem; margin-top: 20px;">
+          Data is stored persistently in your browser's IndexedDB. To see it in DevTools:
+          <strong style="color: var(--gold-crayola);">F12 → Application → IndexedDB → UtkarshRestaurantDB</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- IONICONS -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    'use strict';
+
+    /* ========== PRELOADER ========== */
+    const preloader = document.querySelector("[data-preaload]");
+    window.addEventListener("load", () => {
+      preloader.classList.add("loaded");
+      document.body.classList.add("loaded");
+    });
+
+    /* ========== HELPERS ========== */
+    const addEventOnElements = (elements, eventType, callback) => {
+      for (let i = 0; i < elements.length; i++) elements[i].addEventListener(eventType, callback);
+    };
+
+    /* ========== NAVBAR ========== */
+    const navbar = document.querySelector("[data-navbar]");
+    const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+    const overlay = document.querySelector("[data-overlay]");
+    const toggleNavbar = () => {
+      navbar.classList.toggle("active");
+      overlay.classList.toggle("active");
+      document.body.classList.toggle("nav-active");
+    };
+    addEventOnElements(navTogglers, "click", toggleNavbar);
+
+    /* ========== HEADER & BACK TOP ========== */
+    const header = document.querySelector("[data-header]");
+    const backTopBtn = document.querySelector("[data-back-top-btn]");
+    let lastScrollPos = 0;
+    const hideHeader = () => {
+      const isScrollBottom = lastScrollPos < window.scrollY;
+      if (isScrollBottom) header.classList.add("hide");
+      else header.classList.remove("hide");
+      lastScrollPos = window.scrollY;
+    };
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 50) {
+        header.classList.add("active");
+        backTopBtn.classList.add("active");
+        hideHeader();
+      } else {
+        header.classList.remove("active");
+        backTopBtn.classList.remove("active");
+      }
+    });
+
+    /* ========== HERO SLIDER ========== */
+    const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
+    const heroSliderPrevBtn = document.querySelector("[data-prev-btn]");
+    const heroSliderNextBtn = document.querySelector("[data-next-btn]");
+    let currentSlidePos = 0;
+    let lastActiveSliderItem = heroSliderItems[0];
+    const updateSliderPos = () => {
+      lastActiveSliderItem.classList.remove("active");
+      heroSliderItems[currentSlidePos].classList.add("active");
+      lastActiveSliderItem = heroSliderItems[currentSlidePos];
+    };
+    heroSliderNextBtn.addEventListener("click", () => {
+      currentSlidePos = currentSlidePos >= heroSliderItems.length - 1 ? 0 : currentSlidePos + 1;
+      updateSliderPos();
+    });
+    heroSliderPrevBtn.addEventListener("click", () => {
+      currentSlidePos = currentSlidePos <= 0 ? heroSliderItems.length - 1 : currentSlidePos - 1;
+      updateSliderPos();
+    });
+    // Auto-slide every 6s
+    setInterval(() => {
+      currentSlidePos = currentSlidePos >= heroSliderItems.length - 1 ? 0 : currentSlidePos + 1;
+      updateSliderPos();
+    }, 6000);
+
+    /* ========== TOAST ========== */
+    const toast = document.getElementById("toast");
+    let toastTimer;
+    const showToast = (msg, isError = false) => {
+      toast.textContent = msg;
+      toast.className = "toast" + (isError ? " error" : "");
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
+    };
+
+    /* ========== INDEXEDDB DATABASE ========== */
+    const DB_NAME = "UtkarshRestaurantDB";
+    const DB_VERSION = 1;
+    let db;
+
+    const initDB = () => new Promise((resolve, reject) => {
+      const request = indexedDB.open(DB_NAME, DB_VERSION);
+      request.onupgradeneeded = (e) => {
+        const db = e.target.result;
+        // reservations store
+        if (!db.objectStoreNames.contains("reservations")) {
+          const resStore = db.createObjectStore("reservations", { keyPath: "id", autoIncrement: true });
+          resStore.createIndex("date", "date", { unique: false });
+          resStore.createIndex("status", "status", { unique: false });
+        }
+        // newsletter store
+        if (!db.objectStoreNames.contains("newsletter")) {
+          const nlStore = db.createObjectStore("newsletter", { keyPath: "id", autoIncrement: true });
+          nlStore.createIndex("email", "email", { unique: true });
+        }
+      };
+      request.onsuccess = (e) => { db = e.target.result; resolve(db); };
+      request.onerror = (e) => reject(e.target.error);
+    });
+
+    const addRecord = (storeName, record) => new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, "readwrite");
+      const store = tx.objectStore(storeName);
+      const req = store.add(record);
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = (e) => reject(e.target.error);
+    });
+
+    const getAllRecords = (storeName) => new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, "readonly");
+      const store = tx.objectStore(storeName);
+      const req = store.getAll();
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = (e) => reject(e.target.error);
+    });
+
+    const deleteRecord = (storeName, id) => new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, "readwrite");
+      const store = tx.objectStore(storeName);
+      const req = store.delete(id);
+      req.onsuccess = () => resolve();
+      req.onerror = (e) => reject(e.target.error);
+    });
+
+    const updateRecord = (storeName, record) => new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, "readwrite");
+      const store = tx.objectStore(storeName);
+      const req = store.put(record);
+      req.onsuccess = () => resolve();
+      req.onerror = (e) => reject(e.target.error);
+    });
+
+    const clearStore = (storeName) => new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, "readwrite");
+      const store = tx.objectStore(storeName);
+      const req = store.clear();
+      req.onsuccess = () => resolve();
+      req.onerror = (e) => reject(e.target.error);
+    });
+
+    /* ========== RESERVATION FORM ========== */
+    document.getElementById("reservationForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("res-name").value.trim();
+      const phone = document.getElementById("res-phone").value.trim();
+      const persons = document.getElementById("res-person").value;
+      const date = document.getElementById("res-date").value;
+      const time = document.getElementById("res-time").value;
+      const message = document.getElementById("res-message").value.trim();
+      if (!name || !phone || !date) { showToast("Please fill in required fields.", true); return; }
+      try {
+        await addRecord("reservations", {
+          name, phone, persons: parseInt(persons), date, time, message,
+          status: "pending", created_at: new Date().toISOString()
+        });
+        showToast("✅ Table booked successfully! We'll confirm shortly.");
+        e.target.reset();
+      } catch (err) {
+        showToast("❌ Error saving reservation.", true);
+        console.error(err);
+      }
+    });
+
+    /* ========== NEWSLETTER FORM ========== */
+    document.getElementById("newsletterForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("nl-email").value.trim();
+      if (!email) return;
+      try {
+        await addRecord("newsletter", { email, subscribed_at: new Date().toISOString() });
+        showToast("✅ Subscribed! You'll get 25% off your next visit.");
+        document.getElementById("nl-email").value = "";
+      } catch (err) {
+        if (err.name === "ConstraintError") {
+          showToast("ℹ️ This email is already subscribed.", true);
+        } else {
+          showToast("❌ Error subscribing.", true);
+        }
+      }
+    });
+
+    /* ========== DATABASE PANEL ========== */
+    const dbPanel = document.getElementById("dbPanel");
+    document.getElementById("dbFabBtn").addEventListener("click", () => {
+      dbPanel.classList.add("open");
+      loadOverview();
+    });
+    document.getElementById("dbCloseBtn").addEventListener("click", () => dbPanel.classList.remove("open"));
+
+    // Tabs
+    document.querySelectorAll(".db-tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".db-tab").forEach(t => t.classList.remove("active"));
+        document.querySelectorAll(".db-section").forEach(s => s.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById("tab-" + tab.dataset.tab).classList.add("active");
+        if (tab.dataset.tab === "overview") loadOverview();
+        if (tab.dataset.tab === "reservations") loadReservations();
+        if (tab.dataset.tab === "newsletter") loadNewsletter();
+      });
+    });
+
+    const fmt = (iso) => {
+      const d = new Date(iso);
+      return d.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" });
+    };
+
+    const loadOverview = async () => {
+      const res = await getAllRecords("reservations");
+      const nl = await getAllRecords("newsletter");
+      const today = new Date().toISOString().slice(0, 10);
+      const todayRes = res.filter(r => r.date === today);
+      const pending = res.filter(r => r.status === "pending");
+      document.getElementById("stat-res").textContent = res.length;
+      document.getElementById("stat-nl").textContent = nl.length;
+      document.getElementById("stat-today").textContent = todayRes.length;
+      document.getElementById("stat-pending").textContent = pending.length;
+    };
+
+    const loadReservations = async () => {
+      const records = await getAllRecords("reservations");
+      const tbody = document.getElementById("reservationsTableBody");
+      if (!records.length) {
+        tbody.innerHTML = `<tr><td colspan="10"><div class="db-empty"><div class="icon">📭</div>No reservations yet. Book a table to see data here.</div></td></tr>`;
+        return;
+      }
+      tbody.innerHTML = records.map(r => `
+        <tr>
+          <td>${r.id}</td>
+          <td>${r.name}</td>
+          <td>${r.phone}</td>
+          <td>${r.persons}</td>
+          <td>${r.date}</td>
+          <td>${r.time}</td>
+          <td>${r.message || "—"}</td>
+          <td><span class="badge-${r.status === 'pending' ? 'new' : 'confirmed'}">${r.status}</span></td>
+          <td>${fmt(r.created_at)}</td>
+          <td style="display:flex;gap:5px;flex-wrap:wrap;">
+            ${r.status === 'pending' ? `<button class="db-confirm-btn" onclick="confirmRes(${r.id})">✓ Confirm</button>` : ''}
+            <button class="db-action-btn" onclick="deleteRes(${r.id})">✕ Delete</button>
+          </td>
+        </tr>
+      `).join("");
+    };
+
+    window.confirmRes = async (id) => {
+      const records = await getAllRecords("reservations");
+      const rec = records.find(r => r.id === id);
+      if (rec) { rec.status = "confirmed"; await updateRecord("reservations", rec); loadReservations(); loadOverview(); showToast("✅ Reservation confirmed!"); }
+    };
+    window.deleteRes = async (id) => {
+      if (confirm("Delete this reservation?")) { await deleteRecord("reservations", id); loadReservations(); loadOverview(); showToast("🗑️ Deleted."); }
+    };
+
+    const loadNewsletter = async () => {
+      const records = await getAllRecords("newsletter");
+      const tbody = document.getElementById("newsletterTableBody");
+      if (!records.length) {
+        tbody.innerHTML = `<tr><td colspan="4"><div class="db-empty"><div class="icon">📭</div>No subscribers yet.</div></td></tr>`;
+        return;
+      }
+      tbody.innerHTML = records.map(r => `
+        <tr>
+          <td>${r.id}</td>
+          <td>${r.email}</td>
+          <td>${fmt(r.subscribed_at)}</td>
+          <td><button class="db-action-btn" onclick="deleteNl(${r.id})">✕ Remove</button></td>
+        </tr>
+      `).join("");
+    };
+
+    window.deleteNl = async (id) => {
+      if (confirm("Remove this subscriber?")) { await deleteRecord("newsletter", id); loadNewsletter(); loadOverview(); showToast("🗑️ Removed."); }
+    };
+
+    document.getElementById("refreshResBtn").addEventListener("click", loadReservations);
+    document.getElementById("refreshNlBtn").addEventListener("click", loadNewsletter);
+    document.getElementById("clearResBtn").addEventListener("click", async () => {
+      if (confirm("Clear ALL reservations? This cannot be undone.")) { await clearStore("reservations"); loadReservations(); loadOverview(); showToast("🗑️ All reservations cleared."); }
+    });
+    document.getElementById("clearNlBtn").addEventListener("click", async () => {
+      if (confirm("Clear ALL subscribers? This cannot be undone.")) { await clearStore("newsletter"); loadNewsletter(); loadOverview(); showToast("🗑️ All subscribers cleared."); }
+    });
+
+    /* ========== INIT ========== */
+    initDB().then(() => console.log("✅ Utkarsh Restaurant DB initialized (IndexedDB)")).catch(console.error);
+  </script>
+
+</body>
+</html>
